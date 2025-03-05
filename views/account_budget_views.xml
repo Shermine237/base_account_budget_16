@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_budget_post_search" model="ir.ui.view">
+    <record id="base_account_budget_16.view_budget_post_search" model="ir.ui.view">
         <field name="name">account.budget.post.search</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
@@ -11,7 +11,7 @@
         </field>
     </record>
 
-    <record id="view_budget_post_tree" model="ir.ui.view">
+    <record id="base_account_budget_16.view_budget_post_tree" model="ir.ui.view">
         <field name="name">account.budget.post.tree</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
@@ -22,18 +22,18 @@
         </field>
     </record>
 
-    <record id="open_budget_post_form" model="ir.actions.act_window">
+    <record id="base_account_budget_16.open_budget_post_form" model="ir.actions.act_window">
         <field name="name">Budgetary Positions</field>
         <field name="res_model">account.budget.post</field>
         <field name="view_mode">tree,kanban,form</field>
-        <field name="view_id" ref="view_budget_post_tree"/>
-        <field name="search_view_id" ref="view_budget_post_search"/>
+        <field name="view_id" ref="base_account_budget_16.view_budget_post_tree"/>
+        <field name="search_view_id" ref="base_account_budget_16.view_budget_post_search"/>
     </record>
-    <menuitem action="open_budget_post_form" id="menu_budget_post_form" parent="account.account_management_menu"
+    <menuitem action="base_account_budget_16.open_budget_post_form" id="base_account_budget_16.menu_budget_post_form" parent="account.account_management_menu"
               sequence="5"/>
 
 
-    <record model="ir.ui.view" id="view_budget_post_form">
+    <record model="ir.ui.view" id="base_account_budget_16.view_budget_post_form">
         <field name="name">account.budget.post.form</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
@@ -58,7 +58,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="crossovered_budget_view_form">
+    <record model="ir.ui.view" id="base_account_budget_16.crossovered_budget_view_form">
         <field name="name">budget.view.form</field>
         <field name="model">budget.budget</field>
         <field name="arch" type="xml">
@@ -147,7 +147,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="budget_budget_view_tree">
+    <record model="ir.ui.view" id="base_account_budget_16.budget_budget_view_tree">
         <field name="name">budget.view.tree</field>
         <field name="model">budget.budget</field>
         <field name="arch" type="xml">
@@ -162,7 +162,7 @@
         </field>
     </record>
 
-    <record id="view_budget_kanban" model="ir.ui.view">
+    <record id="base_account_budget_16.view_budget_kanban" model="ir.ui.view">
         <field name="name">budget.kanban</field>
         <field name="model">budget.budget</field>
         <field name="arch" type="xml">
@@ -209,11 +209,11 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="act_budget_view">
+    <record model="ir.actions.act_window" id="base_account_budget_16.act_budget_view">
         <field name="name">Budgets</field>
         <field name="res_model">budget.budget</field>
         <field name="view_mode">tree,kanban,form</field>
-        <field name="view_id" ref="budget_budget_view_tree"/>
+        <field name="view_id" ref="base_account_budget_16.budget_budget_view_tree"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Click to create a new budget.
@@ -234,12 +234,12 @@
         </field>
     </record>
     <menuitem parent="account.menu_finance_entries_management"
-              id="menu_act_budget_view"
+              id="base_account_budget_16.menu_act_budget_view"
               name="Budgets"
-              action="act_budget_view" sequence="60"
+              action="base_account_budget_16.act_budget_view" sequence="60"
               groups="account.group_account_user"/>
 
-    <record id="view_budget_line_search" model="ir.ui.view">
+    <record id="base_account_budget_16.view_budget_line_search" model="ir.ui.view">
         <field name="name">account.budget.line.search</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
@@ -249,7 +249,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_budget_line_tree">
+    <record model="ir.ui.view" id="base_account_budget_16.view_budget_line_tree">
         <field name="name">budget.line.tree</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
@@ -267,7 +267,7 @@
             </tree>
         </field>
     </record>
-    <record model="ir.ui.view" id="view_budget_line_form">
+    <record model="ir.ui.view" id="base_account_budget_16.view_budget_line_form">
         <field name="name">budget.line.form</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
@@ -291,15 +291,15 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="act_budget_lines_view">
+    <record model="ir.actions.act_window" id="base_account_budget_16.act_budget_lines_view">
         <field name="name">Budgets</field>
         <field name="res_model">budget.lines</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_budget_line_tree"/>
+        <field name="view_id" ref="base_account_budget_16.view_budget_line_tree"/>
     </record>
 
     <menuitem parent="account.account_reports_management_menu"
-              id="menu_act_crossovered_budget_lines_view"
-              action="act_budget_lines_view" sequence="20"/>
+              id="base_account_budget_16.menu_act_crossovered_budget_lines_view"
+              action="base_account_budget_16.act_budget_lines_view" sequence="20"/>
 
 </odoo>
