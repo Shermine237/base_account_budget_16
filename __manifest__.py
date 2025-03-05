@@ -59,6 +59,5 @@
     'license': 'LGPL-3',
     'installable': True,
     'auto_install': False,
-    'application': False,
-    'i18n_dir': 'i18n',
+    'application': True,
 }
