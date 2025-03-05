@@ -76,10 +76,15 @@ class Budget(models.Model):
                                  default=lambda self: self.env.company)
 
     @api.model
-    def create(self, vals):
-        if isinstance(vals, list):
-            return super().create(vals)
-        return super().create([vals])[0]
+    def _prepare_vals_for_create(self, vals):
+        # Préparation des valeurs pour la création
+        return vals
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        # Préparation des valeurs pour chaque enregistrement
+        vals_list = [self._prepare_vals_for_create(vals) for vals in vals_list]
+        return super().create(vals_list)
 
     def action_budget_confirm(self):
         self.write({'state': 'confirm'})
