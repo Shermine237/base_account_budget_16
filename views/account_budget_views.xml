@@ -4,7 +4,7 @@
         <field name="name">account.budget.post.search</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
-            <search string="Budgetary Position">
+            <search>
                 <field name="name" filter_domain="[('name','ilike',self)]" string="Budgetary Position"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </search>
@@ -15,7 +15,7 @@
         <field name="name">account.budget.post.tree</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
-            <tree string="Budgetary Position">
+            <tree>
                 <field name="name"/>
                 <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </tree>
@@ -29,22 +29,24 @@
         <field name="view_id" ref="base_account_budget_16.view_budget_post_tree"/>
         <field name="search_view_id" ref="base_account_budget_16.view_budget_post_search"/>
     </record>
-    <menuitem action="base_account_budget_16.open_budget_post_form" id="base_account_budget_16.menu_budget_post_form" parent="account.account_management_menu"
+    
+    <menuitem action="base_account_budget_16.open_budget_post_form" 
+              id="base_account_budget_16.menu_budget_post_form" 
+              parent="account.account_management_menu"
               sequence="5"/>
-
 
     <record model="ir.ui.view" id="base_account_budget_16.view_budget_post_form">
         <field name="name">account.budget.post.form</field>
         <field name="model">account.budget.post</field>
         <field name="arch" type="xml">
-            <form string="Budgetary Position">
+            <form>
                 <sheet>
-                    <group col="4">
+                    <group>
                         <field name="name"/>
                         <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
                     </group>
                     <notebook>
-                        <page string="Accounts">
+                        <page string="Accounts" name="accounts">
                             <field name="account_ids">
                                 <tree>
                                     <field name="code"/>
@@ -62,7 +64,7 @@
         <field name="name">budget.view.form</field>
         <field name="model">budget.budget</field>
         <field name="arch" type="xml">
-            <form string="Budget">
+            <form>
                 <header>
                     <button string="Confirm" name="action_budget_confirm" states="draft" type="object"
                             class="oe_highlight"/>
@@ -72,11 +74,10 @@
                             class="oe_highlight"/>
                     <button string="Reset to Draft" name="action_budget_draft" states="cancel" type="object"/>
                     <button string="Cancel Budget" name="action_budget_cancel" states="confirm,validate" type="object"/>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,validate,done"/>
                 </header>
-                <sheet string="Budget">
+                <sheet>
                     <div class="oe_title">
-                        <label for="name" class="oe_edit_only"/>
                         <h1>
                             <field name="name" attrs="{'readonly':[('state','!=','draft')]}" placeholder="Budget Name"/>
                         </h1>
@@ -87,22 +88,20 @@
                         </group>
                         <group>
                             <label for="date_from" string="Period"/>
-                            <div>
-                                <field name="date_from" placeholder="From" class="oe_inline"
-                                       attrs="{'readonly':[('state','!=','draft')]}"/>
-                                -
-                                <field name="date_to" placeholder="To" class="oe_inline" attrs="{'readonly':[('state','!=','draft')]}"
-                                       nolabel="1"/>
+                            <div class="o_row">
+                                <field name="date_from" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow right" title="Arrow right"/>
+                                <field name="date_to" attrs="{'readonly':[('state','!=','draft')]}"/>
                             </div>
                             <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Budget Lines">
+                        <page string="Budget Lines" name="budget_lines">
                             <field name="budget_line"
-                                   context="{'default_date_from': date_from,'default_date_to': date_to}" colspan="4"
-                                   nolabel="1" attrs="{'readonly':[('state','!=','draft')]}">
-                                <tree string="Budget Lines">
+                                   context="{'default_date_from': date_from,'default_date_to': date_to}"
+                                   attrs="{'readonly':[('state','!=','draft')]}">
+                                <tree editable="bottom">
                                     <field name="general_budget_id"/>
                                     <field name="analytic_account_id" groups="analytic.group_analytic_accounting"
                                            required="1"/>
@@ -112,36 +111,16 @@
                                     <field name="planned_amount" sum="Planned Amount" widget="monetary"/>
                                     <field name="practical_amount" sum="Practical Amount" widget="monetary"/>
                                     <field name="theoretical_amount" sum="Theoretical Amount" widget="monetary"/>
-                                    <field name="percentage"/>
+                                    <field name="percentage" widget="percentage"/>
+                                    <field name="company_currency_id" invisible="1"/>
                                 </tree>
-                                <form string="Budget Lines">
-                                    <group>
-                                        <group>
-                                            <field name="general_budget_id"/>
-                                            <field name="planned_amount" widget="monetary"/>
-                                            <field name="analytic_account_id"
-                                                   groups="analytic.group_analytic_accounting" required="1"/>
-                                        </group>
-                                        <group>
-                                            <label for="date_from" string="Period"/>
-                                            <div>
-                                                <field name="date_from" placeholder="From" class="oe_inline"/>
-                                                -
-                                                <field name="date_to" placeholder="To" class="oe_inline"/>
-                                            </div>
-                                            <field name="paid_date" groups="base.group_no_one"/>
-                                            <field name="company_id" options="{'no_create': True}"
-                                                   groups="base.group_multi_company"/>
-                                        </group>
-                                    </group>
-                                </form>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
                 </div>
             </form>
         </field>
@@ -151,8 +130,8 @@
         <field name="name">budget.view.tree</field>
         <field name="model">budget.budget</field>
         <field name="arch" type="xml">
-            <tree decoration-info="state == 'draft'" decoration-muted="state in ('done','cancel')" string="Budget">
-                <field name="name" colspan="1"/>
+            <tree decoration-info="state == 'draft'" decoration-muted="state in ('done','cancel')">
+                <field name="name"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
                 <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
@@ -174,32 +153,27 @@
                 <field name="state"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
                             <div class="row mb4">
-                                <div class="col-8">
-                                    <strong>
-                                        <field name="name"/>
-                                    </strong>
+                                <div class="col-6">
+                                    <strong><field name="name"/></strong>
                                 </div>
-                                <div class="col-4">
-                                    <span class="float-right">
-                                        <field name="state" widget="label_selection"
-                                               options="{'classes': {'draft': 'default', 'done': 'success'}}"/>
-                                    </span>
+                                <div class="col-6 text-end">
+                                    <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'done': 'success', 'cancel': 'danger'}}"/>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-10">
-                                    <i class="fa fa-clock-o"/>
-                                    <t t-esc="record.date_from.value"/>-
-                                    <t t-esc="record.date_to.value"/>
+                                <div class="col-6">
+                                    <i class="fa fa-clock-o" role="img" aria-label="Period" title="Period"/>
+                                    <field name="date_from"/>
                                 </div>
-                                <div class="col-xs-2">
-                                    <span class="float-right">
-                                        <img alt="" t-att-src="kanban_image('res.users', 'image_small', record.creating_user_id.raw_value)"
-                                             t-att-title="record.creating_user_id.value" width="24" height="24"
-                                             class="oe_kanban_avatar float-right"/>
-                                    </span>
+                                <div class="col-6">
+                                    <field name="date_to"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <field name="creating_user_id"/>
                                 </div>
                             </div>
                         </div>
@@ -215,35 +189,29 @@
         <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" ref="base_account_budget_16.budget_budget_view_tree"/>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                Click to create a new budget.
+            <p class="o_view_nocontent_smiling_face">
+                Create a new budget
             </p>
             <p>
-                A budget is a forecast of your company's income and/or expenses
-                expected for a period in the future. A budget is defined on some
-                financial accounts and/or analytic accounts (that may represent
-                projects, departments, categories of products, etc.)
-            </p>
-            <p>
-                By keeping track of where your money goes, you may be less
-                likely to overspend, and more likely to meet your financial
-                goals. Forecast a budget by detailing the expected revenue per
-                analytic account and monitor its evolution based on the actuals
-                realised during that period.
+                A budget is a forecast of your company's income and expenses expected for a period in the future.
+                With a budget, a company is able to carefully look at how much money they are taking in during a
+                given period and figure out the best way to divide it among various categories.
             </p>
         </field>
     </record>
+
     <menuitem parent="account.menu_finance_entries_management"
               id="base_account_budget_16.menu_act_budget_view"
               name="Budgets"
-              action="base_account_budget_16.act_budget_view" sequence="60"
+              action="base_account_budget_16.act_budget_view"
+              sequence="60"
               groups="account.group_account_user"/>
 
     <record id="base_account_budget_16.view_budget_line_search" model="ir.ui.view">
         <field name="name">account.budget.line.search</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
-            <search string="Budget Lines">
+            <search>
                 <field name="analytic_account_id"/>
             </search>
         </field>
@@ -253,38 +221,41 @@
         <field name="name">budget.line.tree</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
-            <tree string="Budget Lines">
-                <field name="budget_id" invisible="1"/>
+            <tree>
+                <field name="budget_id"/>
                 <field name="general_budget_id"/>
                 <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
                 <field name="date_from"/>
                 <field name="date_to"/>
-                <field name="paid_date" groups="base.group_no_one"/>
+                <field name="paid_date"/>
                 <field name="planned_amount" widget="monetary"/>
                 <field name="practical_amount" widget="monetary"/>
                 <field name="theoretical_amount" widget="monetary"/>
-                <field name="percentage"/>
+                <field name="percentage" widget="percentage"/>
+                <field name="company_currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
+
     <record model="ir.ui.view" id="base_account_budget_16.view_budget_line_form">
         <field name="name">budget.line.form</field>
         <field name="model">budget.lines</field>
         <field name="arch" type="xml">
-            <form string="Budget Lines">
+            <form>
                 <sheet>
                     <group col="4">
                         <field name="budget_id"/>
-                        <field name="analytic_account_id"/>
                         <field name="general_budget_id"/>
+                        <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
                         <field name="date_from"/>
                         <field name="date_to"/>
                         <field name="paid_date"/>
                         <field name="planned_amount" widget="monetary"/>
                         <field name="practical_amount" widget="monetary"/>
                         <field name="theoretical_amount" widget="monetary"/>
-                        <field name="percentage"/>
-                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        <field name="percentage" widget="percentage"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="company_currency_id" invisible="1"/>
                     </group>
                 </sheet>
             </form>
@@ -292,7 +263,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="base_account_budget_16.act_budget_lines_view">
-        <field name="name">Budgets</field>
+        <field name="name">Budget Items</field>
         <field name="res_model">budget.lines</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="base_account_budget_16.view_budget_line_tree"/>
@@ -300,6 +271,8 @@
 
     <menuitem parent="account.account_reports_management_menu"
               id="base_account_budget_16.menu_act_crossovered_budget_lines_view"
-              action="base_account_budget_16.act_budget_lines_view" sequence="20"/>
+              name="Budget Items"
+              action="base_account_budget_16.act_budget_lines_view"
+              sequence="20"/>
 
 </odoo>
