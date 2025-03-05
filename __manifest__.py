@@ -54,11 +54,11 @@
         'security/account_budget_security.xml',
         'views/account_analytic_account_views.xml',
         'views/account_budget_views.xml',
-        'i18n/*.po',
     ],
     'images': ['static/description/banner.png'],
     'license': 'LGPL-3',
     'installable': True,
     'auto_install': False,
     'application': False,
+    'i18n_dir': 'i18n',
 }
