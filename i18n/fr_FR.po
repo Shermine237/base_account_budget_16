@@ -1,0 +1,377 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_account_budget_16
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-04 21:47+0000\n"
+"PO-Revision-Date: 2025-03-04 21:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_kanban
+msgid "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Period\" title=\"Period\"/>"
+msgstr ""
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow right\" title=\"Arrow right\"/>"
+msgstr ""
+
+#. module: base_account_budget_16
+#: model_terms:ir.actions.act_window,help:base_account_budget_16.act_budget_view
+msgid ""
+"A budget is a forecast of your company's income and expenses expected for a period in the future.\n"
+"                With a budget, a company is able to carefully look at how much money they are taking in during a\n"
+"                given period and figure out the best way to divide it among various categories."
+msgstr ""
+"Un budget est une prévision des revenus et dépenses de votre entreprise attendus pour une période future.\n"
+"                Avec un budget, une entreprise peut examiner attentivement combien d'argent elle reçoit pendant\n"
+"                une période donnée et déterminer la meilleure façon de le répartir entre différentes catégories."
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__account_ids
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_post_form
+msgid "Accounts"
+msgstr "Comptes"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__percentage
+msgid "Achievement"
+msgstr "Réalisation"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_needaction
+msgid "Action Needed"
+msgstr "Action nécessaire"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__analytic_account_id
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: base_account_budget_16
+#: model:ir.model,name:base_account_budget_16.model_budget_budget
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__budget_id
+msgid "Budget"
+msgstr "Budget"
+
+#. module: base_account_budget_16
+#: model:ir.actions.act_window,name:base_account_budget_16.act_budget_lines_view
+#: model:ir.ui.menu,name:base_account_budget_16.menu_act_crossovered_budget_lines_view
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_account_analytic_account_form_inherit_budget
+msgid "Budget Items"
+msgstr "Éléments budgétaires"
+
+#. module: base_account_budget_16
+#: model:ir.model,name:base_account_budget_16.model_budget_lines
+msgid "Budget Line"
+msgstr "Ligne budgétaire"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_analytic_account__budget_line
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__budget_line
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__budget_line
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Budget Lines"
+msgstr "Lignes budgétaires"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__name
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Budget Name"
+msgstr "Nom du budget"
+
+#. module: base_account_budget_16
+#: model:ir.model,name:base_account_budget_16.model_account_budget_post
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__general_budget_id
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_post_search
+msgid "Budgetary Position"
+msgstr "Poste budgétaire"
+
+#. module: base_account_budget_16
+#: model:ir.actions.act_window,name:base_account_budget_16.open_budget_post_form
+#: model:ir.ui.menu,name:base_account_budget_16.menu_budget_post_form
+msgid "Budgetary Positions"
+msgstr "Postes budgétaires"
+
+#. module: base_account_budget_16
+#: model:ir.actions.act_window,name:base_account_budget_16.act_budget_view
+#: model:ir.ui.menu,name:base_account_budget_16.menu_act_budget_view
+msgid "Budgets"
+msgstr "Budgets"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Cancel Budget"
+msgstr "Annuler le budget"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields.selection,name:base_account_budget_16.selection__budget_budget__state__cancel
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__company_id
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__company_id
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__company_currency_id
+msgid "Company Currency"
+msgstr "Devise de la société"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields.selection,name:base_account_budget_16.selection__budget_budget__state__confirm
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: base_account_budget_16
+#: model_terms:ir.actions.act_window,help:base_account_budget_16.act_budget_view
+msgid "Create a new budget"
+msgstr "Créer un nouveau budget"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__create_uid
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__create_uid
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__create_date
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__create_date
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__display_name
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__display_name
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields.selection,name:base_account_budget_16.selection__budget_budget__state__done
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Done"
+msgstr "Terminé"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields.selection,name:base_account_budget_16.selection__budget_budget__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__date_to
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__date_to
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_partner_ids
+msgid "Followers (Channels)"
+msgstr "Abonnés (Canaux)"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__id
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__id
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages nécessitent votre attention."
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__message_has_error
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages présentent une erreur de livraison."
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_is_follower
+msgid "Is Follower"
+msgstr "Est abonné"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post____last_update
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget____last_update
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__write_uid
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__write_uid
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__write_date
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__write_date
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison du message"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_account_budget_post__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__paid_date
+msgid "Paid Date"
+msgstr "Date de paiement"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Period"
+msgstr "Période"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__planned_amount
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Planned Amount"
+msgstr "Montant prévu"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__practical_amount
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_lines_search
+msgid "Practical Amount"
+msgstr "Montant réel"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+msgid "Reset to Draft"
+msgstr "Remettre en brouillon"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__user_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__date_from
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__date_from
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__state
+msgid "Status"
+msgstr "État"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date d'échéance est déjà dépassée\n"
+"Aujourd'hui : La date d'activité est aujourd'hui\n"
+"Planifié : Activités futures."
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_lines__theoretical_amount
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.crossovered_budget_view_form
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_lines_search
+msgid "Theoretical Amount"
+msgstr "Montant théorique"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_lines_search
+msgid "To Approve"
+msgstr "À approuver"
+
+#. module: base_account_budget_16
+#: model_terms:ir.ui.view,arch_db:base_account_budget_16.view_budget_lines_search
+msgid "To Approve Budgets"
+msgstr "Budgets à approuver"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,field_description:base_account_budget_16.field_budget_budget__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: base_account_budget_16
+#: model:ir.model.fields,help:base_account_budget_16.field_budget_budget__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
