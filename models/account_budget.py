@@ -75,13 +75,9 @@ class Budget(models.Model):
     company_id = fields.Many2one('res.company', 'Company', required=True,
                                  default=lambda self: self.env.company)
 
-    def create(self, vals):
-        if isinstance(vals, list):
-            return self.env['budget.budget'].browse([
-                super(Budget, self.with_context(create_from_batch=True)).create(val).id
-                for val in vals
-            ])
-        return super(Budget, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        return super(Budget, self).create(vals_list)
 
     def action_budget_confirm(self):
         self.write({'state': 'confirm'})
