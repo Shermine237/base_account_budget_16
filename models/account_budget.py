@@ -57,7 +57,7 @@ class AccountBudgetPost(models.Model):
 class Budget(models.Model):
     _name = "budget.budget"
     _description = "Budget"
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread']
 
     name = fields.Char('Budget Name', required=True, states={'done': [('readonly', True)]}, tracking=True)
     creating_user_id = fields.Many2one('res.users', 'Responsible', default=lambda self: self.env.user, tracking=True)
@@ -75,9 +75,13 @@ class Budget(models.Model):
     company_id = fields.Many2one('res.company', 'Company', required=True,
                                  default=lambda self: self.env.company)
 
-    @api.model_create_multi
+    @api.model
     def create(self, vals_list):
-        return super(Budget, self).create(vals_list)
+        if not vals_list:
+            return self.browse()
+        if isinstance(vals_list, (dict,)):
+            vals_list = [vals_list]
+        return super(models.Model, self).create(vals_list)
 
     def action_budget_confirm(self):
         self.write({'state': 'confirm'})
